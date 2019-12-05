@@ -1,3 +1,4 @@
+// 러닝 자바스크립트 상속 실습
 function createObj(o) {
   function F() {}
   F.prototype = o;
