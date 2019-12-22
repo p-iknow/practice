@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        margin-left: 20px;
+      }
+      .title-box {
+        margin: 30px;
+      }
+      .title-header {
+        font-weight: 600px;
+      }
+      .new-bfc {
+        display: flow-root;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title-box">
+      <h1>CodeSpitz BFC Example</h1>
+      <a href="https://www.bsidesoft.com/?p=3634">코드스피츠 링크</a>
+    </div>
+    <div style="background:rgb(39,241,188)">
+      <div style="float:left;width:100px;height:100px;background:#f00">
+        <div style="margin:10px;width:50px;height:150px;background:#ff0"></div>
+      </div>
+      sample inline text. sample inline text. sample inline text. sample inline
+      text. sample inline text.
+    </div>
+    <div style="clear:both;margin-bottom:100px"></div>
+    <div style="overflow:hidden;background:rgb(39,241,188)">
+      <div style="float:left;width:100px;height:100px;background:#f00">
+        <div style="margin:10px;width:50px;height:150px;background:#ff0"></div>
+      </div>
+      sample inline text. sample inline text. sample inline text. sample inline
+      text. sample inline text.
+    </div>
+  </body>
+</html>
