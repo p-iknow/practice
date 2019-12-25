@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Margin Collapsing</title>
+    <style>
+      .nomalize {
+        margin: 0;
+      }
+      .title-box {
+        margin: 30px;
+      }
+
+      .container {
+        background: burlywood;
+      }
+
+      .item {
+        /* p 태그의 경우 상단의 기본 마진이 적용되어 이를 해지하기 위해 적용 */
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .new-bfc {
+        overflow: hidden;
+        /* 아래 flow-root 또한 new BFC를 만드는 역할을 함 */
+        /* display: flow-root; */
+      }
+
+      .margin {
+        margin-bottom: 30px;
+      }
+
+      .center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title-box">
+      <h1 class="center">Margin Collapsing</h1>
+      <blockquote
+        class="center"
+        cite="https://velog.io/@raram2/mastering-margin-collapsing"
+      >
+        <a href="https://velog.io/@raram2/mastering-margin-collapsing"
+          >CSS 마진 상쇄(Margin-collapsing) 원리 완벽 이해</a
+        >
+      </blockquote>
+    </div>
+    <div class="container">
+      <h2 class="nomalize center">without new bfc</h2>
+      <p class="item">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in et
+        sunt aut veniam id, itaque eveniet eius! Laborum aperiam voluptatum
+        soluta sed voluptas impedit quis illum sit accusamus omnis.
+      </p>
+      <p class="item">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in et
+        sunt aut veniam id, itaque eveniet eius! Laborum aperiam voluptatum
+        soluta sed voluptas impedit quis illum sit accusamus omnis.
+      </p>
+      <p class="item">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in et
+        sunt aut veniam id, itaque eveniet eius! Laborum aperiam voluptatum
+        soluta sed voluptas impedit quis illum sit accusamus omnis.
+      </p>
+    </div>
+    <div class="container new-bfc">
+      <h2 class="nomalize center">new bfc using overflow hidden</h2>
+      <p class="item">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in et
+        sunt aut veniam id, itaque eveniet eius! Laborum aperiam voluptatum
+        soluta sed voluptas impedit quis illum sit accusamus omnis.
+      </p>
+      <p class="item">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in et
+        sunt aut veniam id, itaque eveniet eius! Laborum aperiam voluptatum
+        soluta sed voluptas impedit quis illum sit accusamus omnis.
+      </p>
+      <p class="item">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in et
+        sunt aut veniam id, itaque eveniet eius! Laborum aperiam voluptatum
+        soluta sed voluptas impedit quis illum sit accusamus omnis.
+      </p>
+    </div>
+    <div class="margin"></div>
+  </body>
+</html>
