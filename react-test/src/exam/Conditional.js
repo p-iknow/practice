@@ -7,4 +7,4 @@ const Conditional = () => {
 	return <div onClick={onClickFolded}>{folded ? "닫힘" : "열림"}</div>;
 };
 
-export default Conditional;
+export default Conditional
