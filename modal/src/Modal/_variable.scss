@@ -1,0 +1,280 @@
+//z-index 정리
+$z-tab: 2;
+$z-tooltip: 2;
+$z-sidebar: 2;
+$z-loader: 9; // modal 보다 아래 Tmodal 100;
+$z-dimmer: 10;
+$z-modal: 10;
+$z-fixed: 10;
+
+// url
+$base-url: "//res.tutoring.co.kr/res/img";
+$new-base-url: "//res.tutoring.co.kr/res/images";
+$icon-star: "//res.tutoring.co.kr/res/img/star_icon_20170302.png";
+$icon-review: "//res.tutoring.co.kr/res/img/review_icon_20170302.png";
+
+// 기본 칼라
+$defaultColor: #333;
+$txtDefaultColor: #555;
+$txtPrimaryColor: #919191;
+$activeNoneColor: #c3c3c3;
+$inactiveColor: #d8d8d8;
+$bgColor: #f3f3f3;
+$bgInfoColor: #ececec;
+$mainBlueColor: #34bcff;
+$pointWarningColor: #f93e5e;
+$mainYellowColor: #ffe812;
+$onAirColor: #50e3c2;
+$lineColor: #efefef;
+
+// color 기존
+$sky: $mainBlueColor;
+$global: #0047af;
+$native: #f56b52;
+$chinese: #f44660;
+
+//status 상태
+$offline: #e1e1e1;
+$online: #50e3c2;
+$waiting: #fdbf01;
+$ing: #ff5959;
+
+// color 신규
+$sky-blue: #00abff;
+$dark-black: #232323;
+$light-black: #333333;
+$dark-gray: #777777;
+$light-gray: #999999;
+$red: #ff5959;
+$white: #ffffff;
+$yellow: #ffed00;
+$very-light-gray: #e8e8e8;
+
+$primary: $mainBlueColor;
+$waring: #ff4165;
+$disable: #f5f5f5;
+
+//brand color
+$main: #6759ef;
+$sub: #ffe812;
+
+//text color
+$basic: #333333;
+$sub-text: #999999;
+$warning-text: #ff4165;
+$app-bg-color: #f3f3f3;
+
+// layout
+$header-height: 51px;
+$footer-height: 3.38rem;
+
+// modal width
+$xsm-modal-width: 280px;
+$sm-modal-width: 330px;
+$md-modal-width: 360px;
+
+// modal height
+$sm-min-height: 11rem;
+$sm-max-height: 30rem;
+$md-min-height: 11rem;
+$md-max-height: 35rem;
+
+//font-size
+$font-xxLarge: 34px;
+$font-xLarge: 20px;
+$font-large: 18px;
+$font-medium: 16px;
+$font-small: 14px;
+$font-xSmall: 12px;
+
+// TODO leo : margin 값 정의
+
+@mixin flex-inline-row {
+	display: inline-flex;
+	flex-direction: row;
+}
+
+@mixin flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin flex-justify-between {
+	justify-content: space-between;
+}
+
+@mixin flex-justify-center {
+	justify-content: center;
+}
+
+@mixin flex-justify-evenly {
+	justify-content: space-evenly;
+}
+
+@mixin flex-justify-end {
+	justify-content: flex-end;
+}
+
+@mixin flex-align-center {
+	align-items: center;
+}
+
+@mixin flex-align-end {
+	align-items: flex-end;
+}
+
+@mixin flex-wrap {
+	flex-wrap: wrap;
+}
+
+@mixin align-items {
+	align-items: center;
+}
+
+@mixin gottic99 {
+	&:lang(kr) {
+		font-family: HGGGothicssi99g;
+	}
+	font-weight: bold;
+}
+
+@mixin gottic80 {
+	&:lang(kr) {
+		font-family: HGGGothicssi80g;
+	}
+	font-weight: bold;
+}
+
+@mixin gottic60 {
+	&:lang(kr) {
+		font-family: HGGGothicssi60g;
+	}
+	font-weight: bold;
+}
+
+@mixin gottic40 {
+	&:lang(kr) {
+		font-family: HGGGothicssi40g;
+	}
+}
+
+@mixin gottic20 {
+	&:lang(kr) {
+		font-family: HGGGothicssi20g;
+	}
+}
+
+@mixin gottic00 {
+	&:lang(kr) {
+		font-family: HGGGothicssi00g;
+	}
+}
+
+@mixin rotate($rotation: 0deg) {
+	-webkit-transform: rotate($rotation);
+	-moz-transform: rotate($rotation);
+	-ms-transform: rotate($rotation);
+	-o-transform: rotate($rotation);
+	transform: rotate($rotation);
+}
+
+@mixin sm {
+	@media screen and (max-width: 339px) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (min-width: 340px) and (max-width: 720px) {
+		@content;
+	}
+}
+
+//iphone X
+@mixin ix {
+	@media (min-width: 376px) and (max-width: 720px) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (min-width: 721px) and (max-width: 1023px) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (min-width: 1024px) and (max-width: 1444px) {
+		@content;
+	}
+}
+
+@mixin android {
+	body[class*="mobile-android"] & {
+		@content;
+	}
+}
+
+@mixin ios {
+	body[class*="mobile-ios"] & {
+		@content;
+	}
+}
+
+@mixin spreadIcon($type) {
+	background: url("//res.tutoring.co.kr/res/images/common/ico_comm.png")
+		no-repeat;
+	background-size: 220px 188px;
+
+	@if $type == "info" {
+		width: 16px;
+		height: 16px;
+		background-position: -160px -104px;
+	} @else if $type == "warn" {
+		width: 16px;
+		height: 16px;
+		background-position: -140px -104px;
+	} @else if $type == "question" {
+		width: 16px;
+		height: 16px;
+		background-position: -120px -124px;
+	} @else if $type == "stars-empty" {
+		width: 80px;
+		height: 16px;
+		background-position: -124px -84px;
+	} @else if $type == "stars-full" {
+		width: 80px;
+		height: 16px;
+		background-position: -40px -84px;
+	} @else if $type == "refresh" {
+		width: 24px;
+		height: 24px;
+		background-position: -196px -28px;
+	} @else if $type == "reservation" {
+		width: 16px;
+		height: 16px;
+		background-position: -80px -104px;
+	} @else if $type == "clear" {
+		width: 16px;
+		height: 16px;
+		background-position: -100px -104px;
+	}
+}
+
+@mixin spreadArrowIcon($type) {
+	background: url("#{$new-base-url}/common/ico_arrow.png") no-repeat;
+	background-size: 24px 188px;
+	width: 16px;
+	height: 16px;
+
+	@if $type == "right" {
+		background-position: 0 0;
+	} @else if $type == "right-light" {
+		background-position: 0 -60px;
+	}
+}
