@@ -8,8 +8,30 @@
     <style>
       .title-box {
         margin: 30px;
+        text-align: center;
       }
-      .balloon {
+      .only-border {
+        margin: 0 auto;
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        border-color: tomato;
+      }
+      .top {
+        border-color: tomato transparent transparent transparent;
+      }
+      .bottom {
+        border-color: transparent transparent tomato transparent;
+      }
+      .right {
+        border-color: transparent tomato transparent transparent;
+      }
+      .left {
+        border-color: transparent transparent transparent tomato;
+      }
+
+      .speech-bubble {
+        margin: 0 auto;
         position: relative;
         width: 200px;
         height: 100px;
@@ -20,7 +42,7 @@
         border-radius: 30px;
         box-shadow: 2px 2px 4px #888;
       }
-      .balloon:before {
+      .speech-bubble:before {
         border: 25px solid;
         border-color: #666 transparent transparent transparent;
         content: "";
@@ -29,7 +51,7 @@
         left: 50%;
         transform: translateX(-50%);
       }
-      .balloon:after {
+      .speech-bubble:after {
         content: "";
         position: absolute;
         width: 0;
@@ -44,8 +66,45 @@
   </head>
   <body>
     <div class="title-box">
+      <h1>Only Border</h1>
+      <p>widht: 0, height:0 border 100px;</p>
+    </div>
+    <div class="only-border"></div>
+    <div class="title-box">
+      <h1>Only Border top</h1>
+      <p>
+        border-color: tomato(top) transparent(right), transparent(bottom)
+        transparent(left)
+      </p>
+    </div>
+    <div class="only-border top"></div>
+    <div class="title-box">
+      <h1>Only Border right</h1>
+      <p>
+        border-color: transparent(top) tomato(right), transparent(bottom)
+        transparent(left)
+      </p>
+    </div>
+    <div class="only-border right"></div>
+    <div class="title-box">
+      <h1>Only Border left</h1>
+      <p>
+        border-color: transparent(top) transparent(right), transparent(bottom)
+        tomato(left)
+      </p>
+    </div>
+    <div class="only-border left"></div>
+    <div class="title-box">
+      <h1>Only Border bottom</h1>
+      <p>
+        border-color: transparent(top) transparent(right), tomato(bottom)
+        transparent(left)
+      </p>
+    </div>
+    <div class="only-border top"></div>
+    <div class="title-box">
       <h1>Bubble CSS</h1>
     </div>
-    <div class="balloon"></div>
+    <div class="speech-bubble"></div>
   </body>
 </html>
