@@ -1,0 +1,34 @@
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #1f90ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: #ff6b81;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.greyBox {
+  width: 50px;
+  height: 50px;
+	background-color: #d8d8d8;
+	margin: 5px;
+}
+
+.greyBox:nth-child(2n+1) {
+	background-color: red;
+}
