@@ -87,3 +87,28 @@ conditional 이 type 이 연산되는 과정
 // 1. string | number | string[] | number[]
 // 2. never | never | string[] | number[]
 // 3. string[] | number[]
+
+
+/*
+ generic 선언부에 제약 걸기
+*/
+
+interface Table {
+  id: string;
+  chairs: string[];
+}
+
+interface Dino {
+  id: number;
+  legs: number;
+}
+
+interface World {
+	// 아래 T extends string | number 가 바로 제약을 거는 것이라고 볼 수 있음
+  getItem<T extends string | number>(id: T): T extends string ? Table : Dino;
+}
+
+const world: World = null as any;
+
+const dino = world.getItem(10);
+const what = world.getItem(true); // Error! Argument of type 'boolean' is not assignable to parameter of type 'string | number'.ts(2345)
