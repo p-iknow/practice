@@ -139,3 +139,13 @@ type SomeObjectFlattened = Flatten<typeof person>;
 const isMale = true;
 type SomeBooleanFlattened = Flatten<typeof isMale>;
 // true
+
+
+/*
+ infer
+*/
+
+type UnpackPromise<T> = T extends Promise<infer K>[] ? K : any;
+const promises = [Promise.resolve('Mark'), Promise.resolve(38)];
+
+type Expected = UnpackPromise<typeof promises>; // string | number
