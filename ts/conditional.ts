@@ -149,3 +149,31 @@ type UnpackPromise<T> = T extends Promise<infer K>[] ? K : any;
 const promises = [Promise.resolve('Mark'), Promise.resolve(38)];
 
 type Expected = UnpackPromise<typeof promises>; // string | number
+
+
+/*
+	함수의 리턴 타입 알아내기 - MyReturnType
+*/
+function plus1(seed: number): number {
+  return seed + 1;
+}
+
+// 함수로 제한하기
+type MyReturnType<T extends (...args: any) => any > = T extends (
+  ...args: any
+) => infer R
+  ? R
+  : any;
+
+// typeof 가 compile 타임에 사용되는 경우
+type Id = MyReturnType<typeof plus1>;
+
+
+lookupEntity(plus1(10));
+
+// 이미 있는 소스코드의 타입을 얻어서 타입을 만드는 것
+// lookupEntity 인자의 타입을 정의할 때 함수의 리턴타입을 얻어내서 정의하는 경우
+// 이렇게 하면 타입안정성을 더 지킬 수 있다.
+function lookupEntity(id: Id) {
+  // query DB for entity by ID
+}
